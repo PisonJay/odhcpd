@@ -780,7 +780,7 @@ static void relay_client_request(struct sockaddr_in6 *source,
 	memset(&s, 0, sizeof(s));
 	s.sin6_family = AF_INET6;
 	s.sin6_port = htons(DHCPV6_SERVER_PORT);
-	inet_pton(AF_INET6, ALL_DHCPV6_SERVERS, &s.sin6_addr);
+	inet_pton(AF_INET6, ALL_DHCPV6_RELAYS, &s.sin6_addr);
 
 	avl_for_each_element(&interfaces, c, avl) {
 		if (!c->master || c->dhcpv6 != MODE_RELAY)
